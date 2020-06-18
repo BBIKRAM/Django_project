@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>cost</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for movie in movies %}
+        <tr>
+            <td>{{ movie.id }}</td>
+             <td>
+                 <a href="{% url 'movies:details' movie.id %}">{{ movie.title }}</a>
+            </td>
+            {% comment %} <td>{{ movie.title }}</td> {% endcomment %}
+            <td>{{ movie.cost }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock  %}}
