@@ -14,15 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-# from django.urls import path,include
-from django.conf.urls import url,include
+from django.urls import path,include
+# from django.conf.urls import url,include
 from api.models import a_api
 from . import views
 
 # movie_resource=ModelResource()
 urlpatterns = [
-    url('',views.home),
-    url('admin/', admin.site.urls),
-    url('movies/',include("moviex.urls")),
-    url('api/',include(a_api.urls)),
+    path('',views.home),
+    path('admin/', admin.site.urls),
+    path('movies/',include("moviex.urls")),
+    path('api/',include(a_api.urls)),
 ]
